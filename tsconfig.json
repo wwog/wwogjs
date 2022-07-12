@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "Node16",
+    // "declarationDir": "types",
+    "strict": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "paths": {
+      "@*": [
+        "src/*"
+      ],
+    },
+    "types": [
+      "vitest/importMeta"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+}

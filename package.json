@@ -1,0 +1,47 @@
+{
+  "name": "lib-name",
+  "version": "0.0.0",
+  "description": "",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "homepage": "https://github.com/wwog/lib-template",
+  "bugs": "https://github.com/wwog/lib-template/issues",
+  "types": "./types/index.d.ts",
+  "main": "./dist/lib-name.umd.js",
+  "module": "./dist/lib-name.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/lib-name.es.js",
+      "require": "./dist/lib-name.umd.js"
+    }
+  },
+  "packageManager": "pnpm@7.5.1",
+  "funding": "https://github.com/wwog",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "vite build",
+    "lint": "eslint --cache --ext .tsx,.ts,.js,.jsx .",
+    "lint:fix": "eslint --cache --ext .tsx,.ts,.js,.jsx . --fix",
+    "format": "prettier --ignore-path .eslintignore --write ./src/**/*.ts",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "wwog",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "eslint": "^8.19.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "eslint-config-prettier": "^8.5.0",
+    "typescript": "latest",
+    "vite": "3.0.0-beta.10 || latest",
+    "vite-plugin-dts": "latest",
+    "vitest": "^0.18.0"
+  },
+  "dependencies": {}
+}
