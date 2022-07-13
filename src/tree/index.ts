@@ -1,36 +1,30 @@
+import { isArray } from '@utils/confirmType'
+
 /* eslint-disable @typescript-eslint/no-empty-function */
-type TreeConfig = {
+type TreeNodeConfig = {
   /**
    * @default nodes
    */
   nodesKey?: string
 }
-export class Tree {
-  nodes: Tree[] = []
+
+export class TreeNode {
   nodesKey: string
-  length = this.nodes.length
-  constructor({ nodesKey = 'nodes' }: TreeConfig = {}) {
-    this.nodesKey = nodesKey
+  parent: TreeNode | null = null
+  children: TreeNode[] | undefined | null
+  constructor(config: TreeNodeConfig) {
+    this.nodesKey = config.nodesKey || 'nodes'
   }
-  append(node: Tree) {
-    this.nodes.push(node)
-  }
-  appendNodes(nodes: Tree[]) {
-    this.nodes.push(...nodes)
+  appendChild(child: TreeNode) {
+    if (!isArray(this.children)) {
+      this.children = []
+    }
+    this.children.push(child)
+    child.parent = this
   }
 }
 
 // in-source test
 if (import.meta.vitest) {
   const { it, expect } = import.meta.vitest
-  const tree = new Tree()
-  it('xxx', () => {
-    expect(tree).toMatchInlineSnapshot(`
-      Tree {
-        "length": 0,
-        "nodes": [],
-        "nodesKey": "nodes",
-      }
-    `)
-  })
 }
