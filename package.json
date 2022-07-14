@@ -39,7 +39,7 @@
     "prettier": "^2.7.1",
     "eslint-config-prettier": "^8.5.0",
     "typescript": "latest",
-    "vite": "3.0.0-beta.10 || latest",
+    "vite": "latest",
     "vite-plugin-dts": "latest",
     "vitest": "^0.18.0"
   },
