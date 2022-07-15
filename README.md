@@ -4,7 +4,7 @@
 
 ---
 
-A repository of functional modules for functional development practices.
+A functional module that is developed using a functional approach on the premise of performance first
 
 ## Install
 

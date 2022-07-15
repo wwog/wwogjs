@@ -11,14 +11,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': resolve(rootPath, 'src'),
+    },
+  },
   define,
   test: {
     includeSource: ['src/**/*.ts'],
-  },
-  resolve: {
-    alias: {
-      '@/': resolve(rootPath, 'src'),
-    },
   },
   plugins: [
     dts({
