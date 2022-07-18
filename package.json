@@ -26,7 +26,8 @@
     "lint:fix": "eslint --cache --ext .tsx,.ts,.js,.jsx . --fix",
     "format": "prettier --ignore-path .eslintignore --write ./src/**/*.ts",
     "test": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui"
   },
   "keywords": [],
   "author": "wwog",
@@ -34,6 +35,7 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "@vitest/ui": "^0.18.1",
     "c8": "^7.11.3",
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
