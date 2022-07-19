@@ -20,6 +20,7 @@
   "packageManager": "pnpm@7.5.1",
   "funding": "https://github.com/wwog",
   "scripts": {
+    "prepare": "husky install",
     "preinstall": "npx only-allow pnpm",
     "build": "vite build",
     "lint": "eslint --cache --ext .tsx,.ts,.js,.jsx .",
@@ -40,10 +41,26 @@
     "eslint": "^8.19.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "latest",
     "vite": "latest",
     "vite-plugin-dts": "latest",
     "vitest": "^0.18.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "vitest"
+    ],
+    "*.md": [
+      "prettier --write --ignore-unknown"
+    ]
   }
 }
