@@ -49,14 +49,9 @@
     "vite-plugin-dts": "latest",
     "vitest": "^0.18.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.ts": [
-      "eslint --fix .",
+    "*.{ts,tsx}": [
+      "eslint --fix",
       "vitest"
     ],
     "*.md": [
