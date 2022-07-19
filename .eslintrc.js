@@ -14,7 +14,7 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   rules: {
     //see: https://www.npmjs.com/package/eslint-plugin-prettier
-    'prettier/prettier': 1, //Let format issues be prompted via ESLINT. The experience is mediocre unless you are serious
+    'prettier/prettier': 2, //Let format issues be prompted via ESLINT. The experience is mediocre unless you are serious
     //---------------------------------------------------------
     'linebreak-style': [1, 'unix'],
     'no-var': 2,
