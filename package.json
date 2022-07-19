@@ -51,8 +51,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx}": [
-      "eslint --fix",
-      "vitest"
+      "pnpm lint:fix",
+      "pnpm format"
     ],
     "*.md": [
       "prettier --write --ignore-unknown"
