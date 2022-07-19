@@ -56,5 +56,8 @@
     "*.md": [
       "prettier --write --ignore-unknown"
     ]
+  },
+  "dependencies": {
+    "structured-clone-polyfill": "^0.0.2"
   }
 }
