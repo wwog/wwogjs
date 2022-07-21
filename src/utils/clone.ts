@@ -2,9 +2,9 @@ import { structuredClone as structuredClonePolyfill } from 'structured-clone-pol
 /**
  *  native structuredClone or core-js structuredClone polyfill
  */
-export const structuredClone = (value: any, options?: StructuredSerializeOptions) => {
-  if (window.structuredClone) {
-    return window.structuredClone(value, options)
+export const structuredCloneSafe = <T>(value: T, options?: StructuredSerializeOptions): T => {
+  if (globalThis.structuredClone) {
+    return globalThis.structuredClone(value, options)
   }
   return structuredClonePolyfill(value, options)
 }
