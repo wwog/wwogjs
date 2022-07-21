@@ -1,17 +1,11 @@
-import { structuredCloneSafe } from '@/utils/clone'
-import { NotChangeOriginMethodConfig } from './types'
-
-export type ShiftConfig = NotChangeOriginMethodConfig
 /**
- * Copies the array and returns the result of removing the first member of the array
- * @description not change the original array
+ * The same operation as array under shallow copy returns the shallow copy array.
  * @since 0.0.1
  */
-export const shift = <T>(array: T[], config?: ShiftConfig): T[] => {
-  const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}
+export const shift = <T>(array: T[]): T[] => {
   const arr = [...array]
   arr.shift()
-  return deepClone ? deepCloneMethod(arr) : arr
+  return arr
 }
 
 if (import.meta.vitest) {

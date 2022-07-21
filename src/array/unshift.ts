@@ -1,24 +1,18 @@
-import { structuredCloneSafe } from '@/utils/clone'
-import { NotChangeOriginMethodConfig } from './types'
-
-export type UnshiftConfig = NotChangeOriginMethodConfig
 /**
- * Copies the original array and returns the result after the copied array inserts the header member
- * @description not change the original array
+ * The same operation as array under shallow copy returns the shallow copy array.
  * @since 0.0.1
  */
-export const unshift = <T>(array: T[], config: UnshiftConfig, ...items: T[]): T[] => {
-  const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}
+export const unshift = <T>(array: T[], ...items: T[]): T[] => {
   const arr = [...array]
   arr.unshift(...items)
-  return deepClone ? deepCloneMethod(arr) : arr
+  return arr
 }
 
 if (import.meta.vitest) {
   const { it, expect } = import.meta.vitest
   it(`shift()`, () => {
-    expect(unshift([1, 2, 3], {}, 5)).toEqual([5, 1, 2, 3])
+    expect(unshift([1, 2, 3], 5)).toEqual([5, 1, 2, 3])
     const arr = [1, 2, 3]
-    expect(unshift(arr, {}, 5) === arr).toEqual(false)
+    expect(unshift(arr, 5) === arr).toEqual(false)
   })
 }

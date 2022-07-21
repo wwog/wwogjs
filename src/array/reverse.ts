@@ -1,17 +1,11 @@
-import { structuredCloneSafe } from '@/utils/clone'
-import { NotChangeOriginMethodConfig } from './types'
-
-export type ReverseConfig = NotChangeOriginMethodConfig
 /**
- * Returns the new inverted array
- * @description not change the original array
+ * The same operation as array under shallow copy returns the shallow copy array.
  * @since 0.0.1
  */
-export const reverse = <T>(array: T[], config?: ReverseConfig): T[] => {
-  const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}
+export const reverse = <T>(array: T[]): T[] => {
   const arr = [...array]
   arr.reverse()
-  return deepClone ? deepCloneMethod(arr) : arr
+  return arr
 }
 
 if (import.meta.vitest) {

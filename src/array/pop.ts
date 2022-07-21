@@ -1,17 +1,11 @@
-import { structuredCloneSafe } from '@/utils/clone'
-import { NotChangeOriginMethodConfig } from './types'
-
-export type PopConfig = NotChangeOriginMethodConfig
 /**
- * Returns the new array with the last element removed
- * @description not change the original array
+ * The same operation as array under shallow copy returns the shallow copy array.
  * @since 0.0.1
  */
-export const pop = <T>(array: T[], config?: PopConfig): T[] => {
-  const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}
+export const pop = <T>(array: T[]): T[] => {
   const arr = [...array]
   arr.pop()
-  return deepClone ? deepCloneMethod(arr) : arr
+  return arr
 }
 
 if (import.meta.vitest) {
