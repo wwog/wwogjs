@@ -5,6 +5,7 @@ export type UnshiftConfig = NotChangeOriginMethodConfig
 /**
  * Copies the original array and returns the result after the copied array inserts the header member
  * @description not change the original array
+ * @since 0.0.1
  */
 export const unshift = <T>(array: T[], config: UnshiftConfig, ...items: T[]): T[] => {
   const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}

@@ -1,6 +1,7 @@
 /**
  * @description The parameter of the return function is qualified with the parameter of the last function
  * @description The return value type of the return function is the return value type of the first function
+ * @since 0.0.1
  * @example
  * const toUpper = (str: string) => str.toUpperCase()
  * const exclaim = (str: string) => `${str} fp!`

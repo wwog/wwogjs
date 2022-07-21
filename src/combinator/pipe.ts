@@ -1,6 +1,7 @@
 /**
  * @description The parameter of the return function is qualified with the parameter of the first function
  * @description The return value type of the return function is the return value type of the last function
+ * @since 0.0.1
  */
 export const pipe = <T extends Function[], P = PipeParam<T>, R = PipeResult<T>>(...fns: T) => {
   //@ts-expect-error P is array,but fail to identify

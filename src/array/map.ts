@@ -4,6 +4,7 @@ type MapCallback<T, U> = GenerateBaseLoopCallback<T, U>
 type MapCallbackAsync<T, U> = GenerateBaseLoopCallback<T, Promise<U>>
 /**
  *  Like Array.map.But it can break the loop
+ * @since 0.0.1
  */
 export const map = <T, U = any>(array: T[], fn: MapCallback<T, U>): U[] => {
   const result: U[] = []
@@ -16,7 +17,9 @@ export const map = <T, U = any>(array: T[], fn: MapCallback<T, U>): U[] => {
   })
   return result
 }
-
+/**
+ * @since 0.0.1
+ */
 export const mapAsync = async <T, U = any>(array: T[], callback: MapCallbackAsync<T, U>): Promise<U[]> => {
   const result: U[] = []
   await baseLoopAsync(array, async (value, index, breakKey) => {

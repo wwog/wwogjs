@@ -5,6 +5,7 @@ export type ReverseConfig = NotChangeOriginMethodConfig
 /**
  * Returns the new inverted array
  * @description not change the original array
+ * @since 0.0.1
  */
 export const reverse = <T>(array: T[], config?: ReverseConfig): T[] => {
   const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}

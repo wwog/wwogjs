@@ -5,6 +5,7 @@ export type pushConfig = NotChangeOriginMethodConfig
 /**
  * Return the new array after push
  * @description not change the original array
+ * @since 0.0.1
  */
 export const push = <T>(array: T[], config: pushConfig, ...items: T[]): T[] => {
   const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}

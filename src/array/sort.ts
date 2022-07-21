@@ -5,6 +5,7 @@ export type ReverseConfig = NotChangeOriginMethodConfig
 /**
  * Returns the new sorted array
  * @description not change the original array
+ * @since 0.0.1
  */
 export const sort = <T>(array: T[], compareFn?: (a: T, b: T) => number, config?: ReverseConfig): T[] => {
   const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}

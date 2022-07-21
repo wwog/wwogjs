@@ -21,6 +21,7 @@ export const isFile = (value: any): value is File => value instanceof File
 /**
  * only common types
  * @description 'unknown' indicates unknown type
+ * @since 0.0.1
  */
 export const typeOf = (value: any) => {
   if (isObject(value)) {
@@ -89,6 +90,7 @@ export const typeOf = (value: any) => {
 }
 /**
  * ToString Interception type.
+ * @since 0.0.1
  */
 export const classOf = (value: any) => {
   const { toString } = {}

@@ -5,6 +5,7 @@ export type PopConfig = NotChangeOriginMethodConfig
 /**
  * Returns the new array with the last element removed
  * @description not change the original array
+ * @since 0.0.1
  */
 export const pop = <T>(array: T[], config?: PopConfig): T[] => {
   const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}

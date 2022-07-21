@@ -5,6 +5,7 @@ export type ShiftConfig = NotChangeOriginMethodConfig
 /**
  * Copies the array and returns the result of removing the first member of the array
  * @description not change the original array
+ * @since 0.0.1
  */
 export const shift = <T>(array: T[], config?: ShiftConfig): T[] => {
   const { deepClone = false, deepCloneMethod = structuredCloneSafe } = config || {}

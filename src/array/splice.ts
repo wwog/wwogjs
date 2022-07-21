@@ -5,6 +5,7 @@ export type SpliceConfig = NotChangeOriginMethodConfig
 /**
  * Copy the original array and return the result of the new array after splice
  * @param deleteCount default 0
+ * @since 0.0.1
  */
 export const splice = <T>(
   array: T[],
