@@ -1,6 +1,8 @@
 import { isArray, isObject } from '@/utils/confirmType'
 
-
+/**
+ * @description Data structures where the object is a member of an array
+ */
 export class Collection<T extends Record<string, any>> {
   items!: T[]
   constructor(collection?: T | T[]) {
@@ -21,6 +23,7 @@ export class Collection<T extends Record<string, any>> {
   }
   size = () => this.items.length
   valueOf = () => this.items
+  toString = (getValue?: boolean) => (getValue ? JSON.stringify(this.items) : this.items.toString())
 }
 
 if (import.meta.vitest) {
