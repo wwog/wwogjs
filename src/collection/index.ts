@@ -1,4 +1,4 @@
-import { isArray, isObject } from '@/utils/confirmType'
+import { isArray, isFunction, isObject } from '@/utils/confirmType'
 
 /**
  * @description Data structures where the object is a member of an array
@@ -24,6 +24,20 @@ export class Collection<T extends Record<string, any>> {
   size = () => this.items.length
   valueOf = () => this.items
   toString = (getValue?: boolean) => (getValue ? JSON.stringify(this.items) : this.items.toString())
+  //base methods---------------------------------------------------------------------------------------
+  /**
+   * @since 0.0.1
+   * @description Sum of attributes
+   * @example
+   * new Collection([{age:18},{age:12}]).sum('age') //30
+   */
+  sum = (key: keyof T | ((item: T) => number)) =>
+    this.items.reduce((acc, cur) => {
+      if (isFunction(key)) {
+        return acc + key(cur)
+      }
+      return acc + cur[key]
+    }, 0)
 }
 
 if (import.meta.vitest) {
@@ -36,5 +50,6 @@ if (import.meta.vitest) {
   ])
   it('should be a class', () => {
     expect(Object.prototype.toString.call(ins)).toMatchInlineSnapshot('"[object Collection]"')
+    expect(ins.sum('age')).toBe(78)
   })
 }
