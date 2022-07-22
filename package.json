@@ -52,8 +52,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "eslint --fix",
-      "prettier --write",
-      "vitest"
+      "prettier --write"
     ],
     "*.md": [
       "prettier --write --ignore-unknown"
